@@ -21,7 +21,7 @@ while (1):
     res = cv2.bitwise_and(frame, frame, mask=blue)
 
     (_, cnt, hierarchy) = cv2.findContours(blue, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
-    for pic, contour in enumerate(cnt):
+    for pic, cnt in enumerate(cnt):
         area = cv2.contourArea(cnt)
         if (area > 1000):
             x, y, w, h = cv2.boundingRect(cnt)
